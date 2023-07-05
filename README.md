@@ -1,10 +1,11 @@
-Sure! Here's an example GitHub README for the LinkUp social media application:
+
+![LinkUp Logo](./client/logo.png)
 
 # LinkUp
 
 LinkUp is a dynamic and engaging social media application designed to connect people from all walks of life. It provides a platform for users to create meaningful connections, share their thoughts, interests, and experiences, and foster a vibrant online community.
 
-![LinkUp Logo](./client/logo.png)
+
 
 ## Features
 
