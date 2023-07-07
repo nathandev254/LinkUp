@@ -1,0 +1,40 @@
+.Register--container {
+  width: 100%;
+  /* max-width: 1440px; */
+  height: 100vh;
+  display: flex;
+}
+.Register--left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  /* height: 100%; */
+  color: #fffffff8;
+  background-color: #39ac92;
+}
+.Register--heading {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  margin: 20px;
+}
+.Register--paragraph{
+    margin: 20px;
+}
+
+.Login--button {
+  text-decoration: none;
+  color: azure;
+  border: 1px solid #ffff;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  margin:20px;
+}
+.Register--content {
+  /* border: 1px solid red; */
+  width: 100%;
+  text-align: center;
+}
