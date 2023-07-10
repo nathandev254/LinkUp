@@ -1,4 +1,7 @@
 import React from "react";
+import Sidebar from "../components/sidebar";
+import Navbar from "../components/Navbar";
+import { Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 function Home() {
@@ -6,7 +9,11 @@ function Home() {
 
   return (
     <div>
-      Coming soon....
+      <Navbar />
+      <Sidebar />
+      <div>
+        <Outlet />
+      </div>
     </div>
   );
 }
