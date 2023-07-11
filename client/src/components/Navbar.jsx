@@ -13,7 +13,7 @@ function Navbar() {
       </div>
       <div className="search--container">
         <AiOutlineSearch/>
-        <input type="search" name="" id="" />
+        <input type="search" name="" id="" placeholder="search" />
       </div>
       <div className="profile--container">
             <AiFillMessage/>

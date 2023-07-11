@@ -1,0 +1,32 @@
+.sidebar {
+  width: 250px;
+  background-color: #f1f1f1;
+  /* border: 1px solid red; */
+  /* padding: 10px; */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  margin: auto;
+  padding: 10px 20px;
+  display: block;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sidebar li {
+  margin: 10px;
+}
+
+.link:hover {
+  color: #fff;
+  background-color: #333;
+}
