@@ -10,9 +10,10 @@ function Home() {
   return (
     <div>
       <Navbar />
-      <div style={{display:'flex',minHeight:'90vh'}}>
+      <div style={{ display: "flex", minHeight: "90vh" }}>
         <Sidebar />
         <Outlet />
+        <div>suggested</div>
       </div>
     </div>
   );

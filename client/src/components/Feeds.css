@@ -1,0 +1,53 @@
+.feeds {
+  width: 100%;
+  max-width: 60%;
+  padding: 10px 20px;
+  border-right: 1px solid #ccc;
+}
+
+.feeds--post {
+  width: 100%;
+  position: relative;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.feed--input {
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  resize: none;
+  font-family: "roboto", sans-serif;
+}
+.feed--input textarea {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: "roboto", sans-serif;
+}
+
+.feed--input textarea::placeholder {
+  color: #999;
+}
+
+.feeds--icons {
+    display: flex;
+    gap: 10px;
+}
+.button--post{
+    padding: 10px 20px;
+    /* position: absolute; */
+    border: none;
+    color: #fff;
+    background-color:#39ac92;
+    margin: 10px 0;
+    border-radius: 5px;
+}
