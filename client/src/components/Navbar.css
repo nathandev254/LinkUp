@@ -16,7 +16,7 @@
   width: 20rem;
   display: flex;
   align-items: center;
-  border: 1px solid #000;
+  border: 1px solid #ccc;
   padding: 5px 10px;
   border-radius: 10px;
 }
