@@ -9,7 +9,8 @@
   margin-bottom: 20px;
 }
 .profile--edit {
-  /* border: 1px solid red; */
+  border: 1px solid #ccc;
+  border-radius: 10px;
   box-shadow: 1px ;
   padding: 20px 40px;
   width: 70%;
@@ -76,6 +77,11 @@
 .profile--details input:focus {
   outline: none;
   border-color: #39ac92;
+}
+.btn--container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .edit-btn {
   padding: 10px 20px;

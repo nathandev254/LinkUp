@@ -19,7 +19,7 @@ function Sidebar() {
           </Link>
         </li>
         <li>
-          <Link className="link">
+          <Link to='/notifications' className="link">
             <IoMdNotifications />
             <span>Notification</span>
           </Link>
@@ -31,7 +31,7 @@ function Sidebar() {
           </Link>
         </li>
         <li>
-          <Link className="link">
+          <Link to='/bookmark' className="link">
             <BsFillBookmarkFill />
             <span>Bookmark</span>
           </Link>

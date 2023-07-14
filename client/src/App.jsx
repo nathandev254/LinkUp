@@ -6,7 +6,9 @@ import Home from "./pages/Home";
 import Feeds from "./components/Feeds";
 import Profile from "./components/Editprofile";
 import Messages from "./components/Messages";
-
+import Notifications from "./components/Notifications";
+import Bookmark from './components/Bookmark'
+ 
 function App() {
   return (
     <>
@@ -16,6 +18,8 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="" element={<Home />}>
             <Route path="home" element={<Feeds/>}/>
+            <Route path="notifications" element={<Notifications/>}/>
+            <Route path="bookmark" element={<Bookmark/>}/>
             <Route path="profile" element={<Profile/>}/>
             <Route path="inbox" element={<Messages/>}/>
           </Route>

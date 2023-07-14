@@ -10,7 +10,7 @@ function Profile() {
           <div className="photo--container">
             <img src={photo} alt="" />
           </div>
-          <span>Nathaniel warimwe</span>
+          <span style={{color:'#39ac92'}}>Nathaniel warimwe</span>
         </div>
         <div className="profile--details">
           <input type="text" placeholder="firstname" />
@@ -20,7 +20,7 @@ function Profile() {
           <input type="text" placeholder="location" />
           <input type="text" placeholder="address" />
         </div>
-        <button className="edit-btn">save</button>
+        <div className="btn--container"><button className="edit-btn">save</button></div>
       </div>
     </div>
   );
