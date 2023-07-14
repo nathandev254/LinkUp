@@ -13,7 +13,7 @@ function Home() {
       <div style={{ display: "flex", minHeight: "90vh" }}>
         <Sidebar />
         <Outlet />
-        <div>suggested</div>
+        {/* <div>suggested</div> */}
       </div>
     </div>
   );
