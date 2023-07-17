@@ -1,5 +1,6 @@
 import sql from "mssql";
-import bcrypt from "bcrypt";
+import bcrypt, { compareSync } from "bcrypt";
+import JWT from 'jsonwebtoken'
 import Config from "../model/Configuration.js";
 
 export const Register = async (req, res) => {
@@ -25,7 +26,35 @@ export const Register = async (req, res) => {
 };
 
 export const Login = async (req, res) => {
+  const {email,password} = req.body
   try {
-    res.json({ message: "User logged in successfully" });
-  } catch (error) {}
+    let pool = await sql.connect(Config)
+    const results = await pool.request()
+    .input('email',sql.VarChar,email)
+    .input('password',sql.VarChar,password)
+    .query('SELECT * FROM users WHERE (email) = @email')
+    
+    const user = results.recordset[0]
+    if(!user){
+      res.status(404).json({message:'Email not found'})
+    }
+    else{
+      if(!bcrypt.compareSync(password,user.password)){
+        res.json({message:'Wrong credentials'})
+      }
+      else{
+        const {password,...rest} = user
+        const token =   JWT.sign(rest,'LOGIN123',{expiresIn:"1h"})
+        res.status(200).json({
+          user:user.username,
+          user_id:user.user_id,
+          email:user.email,
+          token
+        })
+      }
+      
+    }
+  } catch (error) {
+    res.json({error:'Failed to login'})
+  }
 };
