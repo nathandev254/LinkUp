@@ -7,7 +7,7 @@ export const CreatePost = async (req, res) => {
   console.log(user_id, description);
   try {
     let pool = await sql.connect(Config);
-    pool
+    await pool
       .request()
       .input("description", sql.VarChar, description)
       .input("user_id", sql.Int, user_id)
@@ -18,6 +18,8 @@ export const CreatePost = async (req, res) => {
     res.status(201).json({ message: "Post created successfully" });
   } catch (error) {
     res.status(500).json({ error: "Failed to create a post" });
+  } finally {
+    sql.close();
   }
 };
 
@@ -29,10 +31,12 @@ export const GetPosts = async (req, res) => {
       .query(
         "SELECT users.username, posts.* FROM users INNER JOIN posts ON users.user_id = posts.user_id"
       );
-        const posts = results.recordset[0]
-    res.status(200).json({ message: "Posts Accessed successfully",posts});
+    const posts = results.recordset[0];
+    res.status(200).json({ message: "Posts Accessed successfully", posts });
   } catch (error) {
     res.status(400).json({ error: "Failed to access posts" });
+  } finally {
+    sql.close();
   }
 };
 

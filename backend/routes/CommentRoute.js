@@ -1,4 +1,4 @@
-import express from 'express'
+import express from "express";
 import {
   CreateComment,
   DeleteComment,
@@ -6,12 +6,10 @@ import {
   GetComments,
 } from "../controllers/CommentController.js";
 
-const CommentRouter = express.Router()
+const CommentRouter = express.Router();
 
-CommentRouter.route("/comment")
-  .get(GetComments)
-  .post(CreateComment)
-  .delete(DeleteComment)
-  .put(UpdateComment);
+CommentRouter.route("/comment").get(GetComments);
+CommentRouter.route("/comment/:post_id").post(CreateComment);
+
 
 export default CommentRouter;

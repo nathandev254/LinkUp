@@ -17,3 +17,12 @@ CREATE TABLE posts (
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
+CREATE TABLE comments (
+    comment_id INT IDENTITY(1,1) PRIMARY KEY,
+    user_id INT,
+    post_id INT,
+    description NVARCHAR(MAX),
+    Timestamp DATETIME,
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (post_id) REFERENCES posts(post_id)
+);
