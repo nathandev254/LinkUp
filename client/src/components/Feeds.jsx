@@ -19,6 +19,10 @@ function Feeds() {
         <button className='button--post'>Post</button>
       </div>
       <Post/>
+      <Post/>
+      <Post/>
+      <Post/>
+      <Post/>
     </div>
   )
 }

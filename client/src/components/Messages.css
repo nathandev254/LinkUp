@@ -1,9 +1,14 @@
+/* Messages.css */
+
+/* General styles for chat layout */
+
 .chat {
   width: 100%;
   padding: 10px;
   display: grid;
   grid-template-columns: 300px auto;
 }
+
 .chat--sidebar {
   width: 300px;
   padding: 10px;
@@ -44,7 +49,7 @@
   margin: 0;
 }
 
-/* chat section */
+/* Chat section */
 
 .chat-container {
   /* background-color: #f0f0f0; */
@@ -54,17 +59,52 @@
 }
 
 .message-list {
-  height: calc(100% - 60px);
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
   overflow-y: scroll;
 }
 
+
 .chat-message {
-  background-color: #fff;
   padding: 10px;
+  width: fit-content;
   margin-bottom: 10px;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+/* Styles for user one's messages on the right */
+
+.chat-message-user-one {
+  background-color: #39ac92; 
+  color: #fff; 
+  align-self: flex-end;
+}
+
+.chat-message-user-one .message img {
+  order: 2;
+}
+
+.chat-message-user-one .message--detail {
+  order: 1;
+}
+
+.chat-message-you {
+  background-color: #eee;
+  color: #333; 
+  align-self: flex-start;
+}
+
+.chat-message-you .message img {
+  order: 1;
+}
+
+.chat-message-you .message--detail {
+  order: 2;
+}
+
+/* Chat input styles */
 
 .chat-input {
   display: flex;
@@ -85,7 +125,7 @@
   padding: 8px 16px;
   border-radius: 4px;
   border: none;
-  background-color: #39ac92;
-  color: #fff;
+  background-color: #39ac92; 
+  color: #fff; 
   cursor: pointer;
 }
