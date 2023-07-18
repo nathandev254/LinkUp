@@ -3,6 +3,7 @@ import { CreatePost,GetPosts,UpdatePosts,DeletePost } from '../controllers/PostC
 
 const PostRouter = express.Router()
 
-PostRouter.route('/post').post(CreatePost).get(GetPosts).put(UpdatePosts).delete(DeletePost)
+PostRouter.route('/post').get(GetPosts)
+PostRouter.route('/post/:user_id').post(CreatePost).put(UpdatePosts).delete(DeletePost)
 
 export default PostRouter

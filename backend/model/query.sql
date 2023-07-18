@@ -1,9 +1,19 @@
 CREATE TABLE users (
-    id INT PRIMARY KEY IDENTITY(1,1),
+    user_id INT PRIMARY KEY IDENTITY(1,1),
     username VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    full_name VARCHAR(255),
+	firstname VARCHAR(255),
+	lastname VARCHAR(255),
     created_at DATETIME DEFAULT GETDATE()
+);
+
+
+CREATE TABLE posts (
+    post_id INT IDENTITY(1,1) PRIMARY KEY,
+    user_id INT,
+    description NVARCHAR(MAX),
+    timestamp DATETIME,
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 

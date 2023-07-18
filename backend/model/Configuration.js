@@ -1,8 +1,8 @@
 const Config = {
     user: 'sa',
-    password: '1234',
+    password: '12345',
     server: 'NATHAN',
-    database: 'LINKUP',
+    database: 'LinkUpDB',
     options: {
       encrypt: false, 
       trustServerCertificate: true, 
