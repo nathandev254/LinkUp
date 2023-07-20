@@ -22,6 +22,7 @@ export const CreateComment = async (req, res) => {
 };
 
 export const GetComments = async (req, res) => {
+  
   res.json({ message: "Comment Accessed successfully" });
 };
 

@@ -2,8 +2,8 @@ import sql from "mssql";
 import Config from "../model/Configuration.js";
 
 export const CreatePost = async (req, res) => {
-  const { user_id } = req.params;
-  const { description } = req.body;
+  // const { user_id } = req.params;
+  const { description,user_id } = req.body;
   console.log(user_id, description);
   try {
     let pool = await sql.connect(Config);

@@ -1,5 +1,5 @@
 
-![LinkUp Logo](./client/logo.png)
+![LinkUp Logo](./client/src/assets/logo.png)
 
 # LinkUp
 
