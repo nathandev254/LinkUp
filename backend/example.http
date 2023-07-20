@@ -1,0 +1,45 @@
+###
+GET http://localhost:8081/comment/2
+
+
+
+###
+POST http://localhost:8081/comment/2
+Content-Type: application/json
+
+{
+    "user_id":"2",
+    "description":"andrew kibe is my mentor"
+}
+
+
+
+###
+POST  http://localhost:8081/login
+Content-Type: application/json
+
+{
+    "email":"warimwenathaniel@gmail.com",
+    "password":"12345"
+}
+
+
+###
+POST http://localhost:8081/register
+Content-Type: application/json
+
+{
+    "email":"john@gmail.com",
+    "username":"joe23",
+    "firstname":"joe",
+    "lastname":"doe"
+}
+
+###
+POST http://localhost:8081/post
+Content-Type: application/json
+
+{
+   "user_id":"2",
+   "description":"A day in the life of a software engineer"
+}
