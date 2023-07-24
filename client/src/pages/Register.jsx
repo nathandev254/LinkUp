@@ -1,11 +1,19 @@
 import React from "react";
 import "./Register.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
+import { RegisterUser } from "../redux/Apicalls";
+import {useDispatch,useSelector} from 'react-redux'
 import {yupResolver} from '@hookform/resolvers/yup'
 
 function Register() {
+  const navigate = useNavigate()
+
+  const {user} = useSelector(state => state.user)
+  const dispatch = useDispatch();
+  console.log(user)
+
   const schema = yup.object().shape({
     username: yup.string().required(),
     firstname: yup.string().required(),
@@ -23,7 +31,10 @@ function Register() {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data)
+    RegisterUser(dispatch,data)
+
+    user ? navigate('/login') : navigate('/')
   };
 
   return (

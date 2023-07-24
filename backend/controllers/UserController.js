@@ -8,7 +8,7 @@ export const Register = async (req, res) => {
     const { username, firstname, lastname, email, password } = req.body;
     const hashedpassword = bcrypt.hashSync(password, 10);
 
-    let pool = await sql.connect(Config);
+    const pool = await sql.connect(Config);
     // console.log(email)
     const results = await pool
       .request()
@@ -16,11 +16,14 @@ export const Register = async (req, res) => {
       .query("SELECT * FROM users WHERE (email) = @email");
 
     const user = results.recordset[0];
+    // console.log(user)
 
-    if (!user) {
-      res.json({ message: "Email exists" });
+    if (user) {
+      res.status(200).json({ message: "Email exists" });
     } else {
-        pool.request()
+      const connect = await sql.connect(sql);
+      connect
+        .request()
         .input("username", sql.VarChar, username)
         .input("firstname", sql.VarChar, firstname)
         .input("lastname", sql.VarChar, lastname)
