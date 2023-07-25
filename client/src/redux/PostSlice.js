@@ -21,8 +21,9 @@ const PostSlice = createSlice({
       state.isFetching = true;
     },
     CreatePostSuccess: (state, action) => {
-      (state.isFetching = false), (state.isError = false);
-      state.posts = [...state.posts, action.payload];
+      state.isFetching = false;
+      state.isError = false;
+      state.posts.push(action.payload);
     },
     CreatePostFailure: (state) => {
       (state.isFetching = false), (state.isError = true);
@@ -33,7 +34,7 @@ const PostSlice = createSlice({
     DeletePostSuccess: (state, action) => {
       (state.isFetching = false),
         (state.posts = state.posts.filter(
-          (post) => post_id !== action.payload
+          (post) => post.post_id !== action.payload
         ));
     },
     DeletePostFailure: (state) => {

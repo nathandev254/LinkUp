@@ -10,8 +10,8 @@ function Feeds() {
   const [description, setdescription] = useState("");
 
   const dispatch = useDispatch();
-  const { posts } = useSelector((state) => state.post?.posts);
-  const { user_id } = useSelector((state) => state.user?.user);
+  const { posts } = useSelector((state) => state.post);
+  const { user_id,username } = useSelector((state) => state.user?.user);
 
   // console.log(user_id)
 
@@ -29,8 +29,12 @@ function Feeds() {
     CreatePost(dispatch, post);
   };
 
+  const handlePostClick = () =>{
+    console.log('clicked')
+  }
+
   return (
-    <div className="feeds">
+    <div className="feeds" >
       <div className="feeds--post">
         <div className="feed--input">
           <textarea
@@ -54,7 +58,7 @@ function Feeds() {
       {posts?.map((post) => {
         return (
           <div key={post?.post_id}>
-            <Post post={post} />
+            <Post post={post} onPostClick={handlePostClick}/>
           </div>
         );
       })}

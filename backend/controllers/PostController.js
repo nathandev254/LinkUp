@@ -3,8 +3,8 @@ import Config from "../model/Configuration.js";
 
 export const CreatePost = async (req, res) => {
   // const { user_id } = req.params;
-  const { description,user_id } = req.body;
-  console.log(user_id, description);
+  const { description, user_id } = req.body;
+  // console.log(user_id, description);
   try {
     let pool = await sql.connect(Config);
     await pool
@@ -29,10 +29,10 @@ export const GetPosts = async (req, res) => {
     const results = await pool
       .request()
       .query(
-        "SELECT users.username, posts.* FROM users INNER JOIN posts ON users.user_id = posts.user_id"
+        "SELECT users.username, posts.*  FROM users INNER JOIN posts ON users.user_id = posts.user_id ORDER BY posts.post_id DESC"
       );
-    const posts = results.recordset[0];
-    res.status(200).json({ message: "Posts Accessed successfully", posts });
+    // const posts = results.recordset;
+    res.status(200).json(results.recordset);
   } catch (error) {
     res.status(400).json({ error: "Failed to access posts" });
   } finally {

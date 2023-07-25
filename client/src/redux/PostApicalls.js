@@ -24,17 +24,25 @@ export const GetPosts = (dispatch) => {
 };
 
 export const CreatePost = (dispatch, post) => {
-  dispatch(CreatePostStart());
-//   console.log(post);
-  const {user_id} = post
-  axios
-    .post(`http://localhost:8081/post/${user_id}`, post)
-    .then(({data}) => {
-      console.log(data);
-        // dispatch(CreatePostSuccess())
-    })
-    .catch((error) => {
-      console.error(error);
-        dispatch(CreatePostFailure())
-    });
+  try {
+    dispatch(CreatePostStart());
+    console.log(post);
+    const { user_id } = post;
+    const {data} =   axios.post(`http://localhost:8081/post/${user_id}`, post)
+    console.log(data);
+    dispatch(CreatePostSuccess(post));
+  } catch (err) {
+    console.log(err);
+    dispatch(CreatePostFailure());
+  }
+
+  // axios
+  //   .post(`http://localhost:8081/post/${user_id}`, post)
+  //   .then(response => {
+  //     // console.log(data);
+  //   })
+  //   .catch((error) => {
+  //     console.error(error);
+  //       dispatch(CreatePostFailure())
+  //   });
 };

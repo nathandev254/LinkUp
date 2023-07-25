@@ -4,28 +4,25 @@ import { FiMoreHorizontal } from "react-icons/fi";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BiSolidCommentDetail } from "react-icons/bi";
 import { BsFillBookmarkFill } from "react-icons/bs";
+import {useDispatch,useSelector} from 'react-redux'
+import { GetComments } from "../redux/CommentApicalls";
 import "./Post.css";
 
-function Post({post}) {
+function Post({post,onClick}) {
   // console.log(post)
+  const dispatch = useDispatch()
+
+  const user = useSelector(state => state.user)
+  const {posts} = useSelector(state => state.post)
+  console.log(posts)
+
   const [Commentstate, setCommentstate] = useState(false);
 
   const HandleCommentShow = () => {
     setCommentstate(!Commentstate)
+    GetComments(dispatch)
+    onClick
   };
-
-  const comments = [
-    {
-      id: 1,
-      user: "UserOne",
-      comment: "This is a great post!",
-    },
-    {
-      id: 2,
-      user: "You",
-      comment: "Thanks! I'm glad you liked it.",
-    },
-  ];
 
   return (
     <div className="post--container">
@@ -52,7 +49,7 @@ function Post({post}) {
         </div>
       </div>
 
-      {Commentstate && (
+      {/* {Commentstate && (
         <div className="post--comments">
           {comments.map((comment) => (
             <div className="comment" key={comment.id}>
@@ -65,7 +62,7 @@ function Post({post}) {
             <button className="comment-btn">Add</button>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
