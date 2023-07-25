@@ -1,10 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const userSlice = createSlice({
   name: "user",
   initialState: {
-    user:null,
+    user: null,
     Isfetching: false,
     RegisterStatus: false,
   },
@@ -22,16 +21,15 @@ const userSlice = createSlice({
     LogOut: (state) => {
       state.user = null;
     },
-    RegisterStart:(state) => {
-      state.Isfetching = true
+    RegisterStart: (state) => {
+      state.Isfetching = true;
     },
-    RegisterSuccess: (state,action) => {
-      state.RegisterStatus = true,
-      state.user = action.payload
+    RegisterSuccess: (state, action) => {
+      (state.RegisterStatus = true), (state.user = action.payload);
     },
     RegisterFailure: (state) => {
       state.RegisterStatus = false;
-      state.user = null
+      state.user = null;
     },
   },
 });

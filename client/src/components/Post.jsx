@@ -6,7 +6,8 @@ import { BiSolidCommentDetail } from "react-icons/bi";
 import { BsFillBookmarkFill } from "react-icons/bs";
 import "./Post.css";
 
-function Post() {
+function Post({post}) {
+  // console.log(post)
   const [Commentstate, setCommentstate] = useState(false);
 
   const HandleCommentShow = () => {
@@ -31,15 +32,15 @@ function Post() {
       <div className="post--top">
         <div className="top--left">
           <img src={photo} alt="" />
-          <span>Nathaniel</span>
+          <span>{post.username}</span>
         </div>
         <div className="top--right">
           <FiMoreHorizontal />
         </div>
       </div>
       <div className="post--content">
-        <p className="post--text">Things that make me work hard as a man</p>
-        <img src={photo} alt="image" />
+        <p className="post--text">{post.description}</p>
+        {/* <img src={photo} alt="image" /> */}
       </div>
       <div className="post--footer">
         <div className="post--footer_left">

@@ -38,12 +38,8 @@ export const LoginUser = (dispatch, user) => {
     });
 };
 
-export const LogOut = () => {};
+export const LogOut = (dispatch) => {
+  // dispatch(LogOut())
+};
 
-export const CreatePost = () => {};
 
-export const GetPosts = () => {};
-
-export const PostComment = () => {};
-
-export const GetComments = () => {};
