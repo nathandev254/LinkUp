@@ -1,4 +1,4 @@
-
+/* Styles for the post container */
 .post--container {
   width: 100%;
   max-width: 800px;
@@ -9,6 +9,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
+/* Styles for the top section */
 .post--top {
   display: flex;
   align-items: center;
@@ -43,100 +44,49 @@
   object-fit: cover;
 }
 
+/* Styles for the footer section */
 .post--footer {
+  width: 100%;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
-  /* border-top: 1px solid #ccc; */
+  /* border: 1px solid red; */
 }
 
+/* Styles for the left part of the footer */
 .post--footer_left {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+}
+
+/* Styles for the heart icon */
+.post--footer_left svg:first-child {
+  width: 30px;
+  height: 30px;
+  fill: #ff6347;
+  cursor: pointer;
+}
+
+/* Styles for the comment icon */
+.post--footer_left svg:last-child {
+  width: 30px;
+  height: 30px;
+  fill: #39ac92;
+  cursor: pointer;
+}
+
+/* Styles for the right part of the footer */
+.post--footer_right {
   display: flex;
   gap: 10px;
 }
 
-.post--footer_left svg,
+/* Styles for the bookmark icon */
 .post--footer_right svg {
   width: 30px;
   height: 30px;
-}
-
-
-
-/* Comment section styles */
-
-.post--comments {
-  margin-top: 20px;
-  padding: 10px 20px;
-  border-top: 1px solid #ccc;
-}
-
-.comment {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-  animation: slideIn 0.5s ease;
-}
-
-.comment:last-child {
-  margin-bottom: 0; 
-}
-
-.comment--user {
-  font-weight: bold;
-  color: #39ac92;
-}
-
-.comment--text {
-  flex-grow: 1;
-  color: #333;
-}
-
-.comment--input {
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-}
-
-.comment--input input {
-  flex-grow: 1;
-  padding: 12px;
-  background: transparent;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  outline: none;
-  font-size: 14px;
-  color: #333;
-  transition: border-color 0.2s ease;
-}
-
-.comment--input input::placeholder {
-  color: #888;
-}
-
-.comment--input button.comment-btn {
-  padding: 12px 24px;
-  border-radius: 20px;
-  margin: 5px 10px;
-  border: none;
-  background-color: #39ac92;
-  color: #fff;
-  font-weight: bold;
-  font-size: 14px;
+  fill: #999;
   cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-
-
-@keyframes slideIn {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }

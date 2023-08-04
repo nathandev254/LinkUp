@@ -39,10 +39,9 @@ export const GetComments = async (req, res) => {
       );
 
     const comments = results.recordset; 
-    res.send(results)
-    // res
-    //   .status(200)
-    //   .json({ message: "Comments accessed successfully", comments });
+    res
+      .status(200)
+      .json(comments);
   } catch (error) {
     res
       .status(500)

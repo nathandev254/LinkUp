@@ -29,9 +29,9 @@ function Feeds() {
     CreatePost(dispatch, post);
   };
 
-  const handlePostClick = () =>{
-    console.log('clicked')
-  }
+  // const handlePostClick = () =>{
+  //   console.log('clicked')
+  // }
 
   return (
     <div className="feeds" >
@@ -58,7 +58,7 @@ function Feeds() {
       {posts?.map((post) => {
         return (
           <div key={post?.post_id}>
-            <Post post={post} onPostClick={handlePostClick}/>
+            <Post post={post}/>
           </div>
         );
       })}

@@ -4,24 +4,20 @@ import { FiMoreHorizontal } from "react-icons/fi";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BiSolidCommentDetail } from "react-icons/bi";
 import { BsFillBookmarkFill } from "react-icons/bs";
-import {useDispatch,useSelector} from 'react-redux'
-import { GetComments } from "../redux/CommentApicalls";
+import { useSelector } from "react-redux";
+import Comments from "./Comments";
 import "./Post.css";
 
-function Post({post,onClick}) {
-  // console.log(post)
-  const dispatch = useDispatch()
+function Post({ post }) {
+  // console.log(post);
 
-  const user = useSelector(state => state.user)
-  const {posts} = useSelector(state => state.post)
-  console.log(posts)
+  const {comments} = useSelector((state) => state.comment)
+  // console.log(comments)
 
   const [Commentstate, setCommentstate] = useState(false);
 
   const HandleCommentShow = () => {
-    setCommentstate(!Commentstate)
-    GetComments(dispatch)
-    onClick
+    setCommentstate(!Commentstate);
   };
 
   return (
@@ -45,24 +41,10 @@ function Post({post,onClick}) {
           <BiSolidCommentDetail onClick={HandleCommentShow} />
         </div>
         <div className="post--footer_right">
-          <BsFillBookmarkFill  />
+          <BsFillBookmarkFill />
         </div>
       </div>
-
-      {/* {Commentstate && (
-        <div className="post--comments">
-          {comments.map((comment) => (
-            <div className="comment" key={comment.id}>
-              <span className="comment--user">{comment.user}: </span>
-              <span className="comment--text">{comment.comment}</span>
-            </div>
-          ))}
-          <div className="comment--input">
-            <input type="text" placeholder="Add a comment..." />
-            <button className="comment-btn">Add</button>
-          </div>
-        </div>
-      )} */}
+      {Commentstate && <Comments post_id={post.post_id} comments={comments} /> }
     </div>
   );
 }
